@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light" data-accent="sage">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+<meta name="theme-color" content="#2f5d4a">
+<title>دفتر · مساحتك الشخصية للحياة والأفكار</title>
+<meta name="description" content="دفتر شخصي يجمع المهام والأهداف والعادات واليوميات والقوائم والملاحظات والمصروفات في مكان واحد هادئ.">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="icon" href="icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+<link rel="manifest" href="manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="دفتر">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="color-scheme" content="light dark">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=3">
+<script>
+window.__BOOT = false; window.__BOOT_ERR = "";
+window.addEventListener("error", function (e) {
+  if (!window.__BOOT) { window.__BOOT = "err";
+    window.__BOOT_ERR = (e.message || "") + " @ " + (e.filename || "").split("/").pop() + ":" + (e.lineno || "?");
+    window.__showBootErr && window.__showBootErr(); }
+}, true);
+window.__showBootErr = function () { var b = document.getElementById("bootErr");
+  if (b) { b.style.display = "flex"; var m = document.getElementById("bootErrMsg"); if (m) m.textContent = window.__BOOT_ERR || "قد تكون الملفات مخزّنة في المتصفح"; } };
+window.__fresh = function () { location.replace(location.pathname + "?r=" + Date.now()); };
+setTimeout(function () { if (!window.__BOOT) window.__showBootErr(); }, 9000);
+</script>
+</head>
+<body>
+
+<div id="bootErr"><div class="boot-card">
+  <b>⚠️ الصفحة لم تعمل كما ينبغي</b>
+  <p>غالباً خزّن المتصفح نسخة قديمة من الملفات. حدّث الصفحة الآن:</p>
+  <button type="button" onclick="__fresh()">🔄 تجديد الصفحة</button>
+  <small id="bootErrMsg"></small>
+</div></div>
+
+<div id="splash"><div class="splash-in">
+  <div class="splash-logo">📔</div>
+  <h1>دفتر</h1>
+  <p>مساحتك الهادئة للحياة والأفكار</p>
+  <div class="bar"><i></i></div>
+</div></div>
+
+<div id="authScreen" class="auth" hidden>
+  <div class="auth-art">
+    <div class="auth-art-glow"></div>
+    <div class="auth-brand"><span class="brand-mark">📔</span><b>دفتر</b></div>
+    <h2 data-i18n="authTag">مكان تعود إليه بعد سنوات،<br>لتجد أهدافك وأفكارك وذكرياتك.</h2>
+    <p data-i18n="authSub">مهام، أهداف، عادات، يوميات، قوائم، ملاحظات ومصروفات — في مساحة واحدة خاصة بك.</p>
+    <div class="auth-quote">
+      <span>“</span>
+      <p data-i18n="authQuote">لا تجعل الدفتر مجرد أداة لإدارة الوقت، بل ذاكرة صغيرة لحياتك.</p>
+    </div>
+    <div class="auth-dots"><i></i><i></i><i></i></div>
+  </div>
+  <div class="auth-panel">
+    <div class="auth-card" id="authMount"></div>
+    <p class="auth-foot" data-i18n="localOnly">🔒 بياناتك تُحفظ على جهازك فقط، ولا تُرسل إلى أي خادم.</p>
+  </div>
+</div>
+
+<div id="shell" hidden>
+  <aside class="sidebar" id="sidebar" aria-label="التنقل الجانبي">
+    <div class="side-brand">
+      <span class="brand-mark">📔</span>
+      <div><b>دفتر</b><small data-i18n="brandSub">مساحتك الشخصية</small></div>
+    </div>
+    <nav class="side-nav" id="sideNav" aria-label="صفحات دفتر"></nav>
+    <div class="side-user" id="sideUser"></div>
+  </aside>
+
+  <div class="main-shell">
+    <header class="topbar">
+      <div class="tb-start">
+        <button type="button" class="icon-btn only-mobile" id="menuBtn" aria-label="القائمة" data-i18n-aria="menu">☰</button>
+        <div class="tb-title"><b id="pageTitle">الرئيسية</b><small id="pageSub">ملخص يومك</small></div>
+      </div>
+      <div class="tb-end">
+        <button type="button" class="icon-btn" id="searchBtn" aria-label="بحث شامل" data-i18n-aria="search">🔍</button>
+        <button type="button" class="icon-btn" id="themeBtn" aria-label="الوضع الليلي" data-i18n-aria="theme">🌙</button>
+        <button type="button" class="avatar-btn" id="avatarBtn" aria-label="الحساب">د</button>
+      </div>
+    </header>
+
+    <main id="app">
+      <section class="page" data-page="home" id="page-home"></section>
+      <section class="page" data-page="tasks" id="page-tasks" hidden></section>
+      <section class="page" data-page="calendar" id="page-calendar" hidden></section>
+      <section class="page" data-page="journal" id="page-journal" hidden></section>
+      <section class="page" data-page="goals" id="page-goals" hidden></section>
+      <section class="page" data-page="habits" id="page-habits" hidden></section>
+      <section class="page" data-page="lists" id="page-lists" hidden></section>
+      <section class="page" data-page="notes" id="page-notes" hidden></section>
+      <section class="page" data-page="money" id="page-money" hidden></section>
+      <section class="page" data-page="review" id="page-review" hidden></section>
+      <section class="page" data-page="reminders" id="page-reminders" hidden></section>
+      <section class="page" data-page="settings" id="page-settings" hidden></section>
+    </main>
+  </div>
+
+  <nav class="bottomnav" id="bottomNav" aria-label="التنقل السريع"></nav>
+</div>
+
+<aside id="drawer" hidden aria-label="قائمة التنقل">
+  <div class="drawer-head">
+    <div class="side-brand"><span class="brand-mark">📔</span><div><b>دفتر</b><small id="drawerSub"></small></div></div>
+    <button type="button" class="icon-btn" id="drawerClose" aria-label="إغلاق">✕</button>
+  </div>
+  <nav class="drawer-nav" id="drawerNav" aria-label="كل الصفحات"></nav>
+  <div class="drawer-foot" id="drawerFoot"></div>
+</aside>
+<div id="overlay" hidden></div>
+<div id="modalRoot"></div>
+<div id="toast" class="toast" hidden></div>
+
+<script src="js/app.js?v=3"></script>
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("./sw.js").catch(function () {});
+  });
+}
+</script>
+</body>
+</html>
