@@ -7,6 +7,8 @@
 داخل `localStorage`. يعمل على الجوال والحاسوب، بوضعين نهاري وليلي، ويدعم
 تثبيته كتطبيق PWA.
 
+**الموقع الرسمي:** https://xxx88220xxx-design.github.io/daftar/
+
 ---
 
 ## 📂 الملفات
@@ -26,8 +28,7 @@ daftar/
 ├── apple-touch-icon.png    أيقونة iOS
 ├── serve.py                خادم محلي بدون كاش
 ├── watchd.py               حارس دائم يعيد تشغيل الخادم تلقائياً
-├── watch.sh                حارس بسيط
-└── .github/workflows/      نشر تلقائي على GitHub Pages
+└── watch.sh                حارس بسيط
 ```
 
 ---
@@ -76,8 +77,9 @@ python3 watchd.py stop
 ## 🌐 النشر
 
 ### GitHub Pages
-ارفع المجلد إلى مستودع GitHub ثم فعّل Pages. ملف
-`.github/workflows/pages.yml` ينشر الموقع تلقائياً عند الدفع إلى `main`.
+الموقع منشور من الفرع `main` مباشرة على GitHub Pages:
+https://xxx88220xxx-design.github.io/daftar/ — أي تحديث يُدفع إلى `main`
+يظهر تلقائياً بعد دقائق.
 
 ### نفق سريع
 ```bash
